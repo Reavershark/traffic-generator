@@ -1,7 +1,9 @@
-import vibe.vibe;
 import vibe.http.server;
+import std.exception : enforce;
+import std.conv : to;
+
 import std.range;
-import std.algorithm;
+import std.algorithm : joiner, map;
 
 immutable ubyte[] default_data = [cast(ubyte) '0'];
 immutable ulong default_size = 1_000_000;
