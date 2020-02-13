@@ -1,6 +1,7 @@
 import vibe.vibe;
 import vibe.http.server;
 import std.range;
+import std.algorithm;
 
 immutable ubyte[] default_data = [cast(ubyte) '0'];
 immutable ulong default_size = 1_000_000;
@@ -13,7 +14,7 @@ void handleRequest(scope HTTPServerRequest req, scope HTTPServerResponse res)
 		.query["data"] : default_data;
 	immutable ulong size = ("size" in req.query) ? req.query["size"].to!ulong : default_size;
 
-	res.writeBody(data.repeat.take(size).join.array);
+	res.writeBody(data.repeat.joiner.take(size).array);
 }
 
 shared static this()
