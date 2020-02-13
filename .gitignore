@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/traffic-generator
+traffic-generator.so
+traffic-generator.dylib
+traffic-generator.dll
+traffic-generator.a
+traffic-generator.lib
+traffic-generator-test-*
+*.exe
+*.o
+*.obj
+*.lst

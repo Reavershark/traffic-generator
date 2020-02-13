@@ -1,0 +1,15 @@
+{
+	"authors": [
+		"Jonas Meeuws"
+	],
+	"copyright": "Copyright © 2020, Jonas Meeuws",
+	"dependencies": {
+		"vibe-d": "~>0.8.2"
+	},
+	"description": "A web server hosting large random files.",
+	"license": "proprietary",
+	"name": "traffic-generator",
+	"versions": [
+		"VibeDefaultMain"
+	]
+}
