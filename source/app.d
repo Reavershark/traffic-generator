@@ -14,7 +14,8 @@ void handleRequest(scope HTTPServerRequest req, scope HTTPServerResponse res)
 		.query["data"] : default_data;
 	immutable ulong size = ("size" in req.query) ? req.query["size"].to!ulong : default_size;
 
-	res.writeBody(data.repeat.joiner.take(size).array);
+	foreach (chunk; data.repeat.joiner.take(size).chunks(4096).map!array)
+		res.bodyWriter.write(chunk);
 }
 
 shared static this()
